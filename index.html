@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>いこモン</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="c" width="480" height="320"></canvas>
+<div class="hint">移動: 矢印キー / WASD ・ 話す・調べる: Z / Enter / Space ・ Shift 長押しでダッシュ ・ M: 効果音 ON/OFF</div>
+<div id="pad">
+  <button data-a="cancel" style="font-size:13px">戻る</button><button data-d="up">▲</button><button data-a="ok" style="font-size:13px">決定</button>
+  <button data-d="left">◀</button><button data-d="down">▼</button><button data-d="right">▶</button>
+</div>
+
+<script>
+// スクリプトの読み込み順(順番を変えるとエラーになる。新しいファイルは、依存する物の「後」に足す)。
+// ?v=時刻 をつけて、ブラウザが古いスクリプトを使い回さないようにしている(直したのに反映されない、を防ぐ)。
+(function () {
+  var files = [
+    "js/data/world.js",
+    "js/data/assets.js",
+    "js/data/maps.js",
+    "js/data/ch2.js",
+    "js/data/ch3.js",
+    "js/data/ch4.js",
+    "js/core/assets.js",
+    "js/core/state.js",
+    "js/core/sound.js",
+    "js/core/input.js",
+    "js/map/map.js",
+    "js/event/runner.js",
+    "js/event/choice.js",
+    "js/ui/common.js",
+    "js/data/cards.js",
+    "js/data/quests.js",
+    "js/data/items.js",
+    "js/data/presets.js",
+    "js/battle/enemy-art.js",
+    "js/data/hero.js",
+    "js/data/enemies.js",
+    "js/data/final.js",
+    "js/battle/engine.js",
+    "js/battle/final.js",
+    "js/battle/input.js",
+    "js/battle/render.js",
+    "js/ui/deck-edit.js",
+    "js/ui/class.js",
+    "js/ui/menu.js",
+    "js/ui/items.js",
+    "js/ui/scene.js",
+    "js/save.js",
+    "js/main.js"
+  ];
+  var v = Date.now();
+  files.forEach(function (f) { document.write('<script src="' + f + '?v=' + v + '"><\/script>'); });
+})();
+</script>
+</body>
+</html>
